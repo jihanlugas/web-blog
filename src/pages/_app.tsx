@@ -20,6 +20,7 @@ const MyApp: NextPage<AppLayoutProps> = ({ Component, pageProps }) => {
     <>
       <Head>
         <title>{process.env.APP_NAME}</title>
+        <meta name="google-site-verification" content="d_Z0doP666Lm0u8e3DB4BMNCrtutRdIkup20TTWPEVM" />
       </Head>
       <QueryClientProvider client={queryClient}>
         <Layout>
