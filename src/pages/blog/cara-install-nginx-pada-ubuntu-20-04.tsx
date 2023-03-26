@@ -6,13 +6,21 @@ import Image from '@/components/image';
 import Link from 'next/link';
 import { useRef } from 'react';
 import Terbaru from '@/components/layout/terbaru';
+import { blogData } from '@/types/blog';
+import { displayDate } from '@/utils/Formater';
 
 type Props = {
 
 }
 
-const title = 'Cara install nginx pada ubuntu 20.04'
-const description = 'Dalam panduan ini, kita akan membahas cara menginstal Nginx pada server Ubuntu 20.04 Anda, menyesuaikan firewall, mengelola proses Nginx, dan menyiapkan blok server untuk menjadi hos dari lebih dari satu domain dari suatu server tunggal.'
+const pageData: blogData = {
+  title: 'Cara install nginx pada ubuntu 20.04',
+  description: 'Dalam panduan ini, kita akan membahas cara menginstal Nginx pada server Ubuntu 20.04 Anda, menyesuaikan firewall, mengelola proses Nginx, dan menyiapkan blok server untuk menjadi hos dari lebih dari satu domain dari suatu server tunggal.',
+  keywords: 'ubuntu, nginx, cara install nginx, cara install nginx ubuntu, cara install nginx ubuntu 20.04, install nginx ubuntu, install nginx',
+  author: 'Jihan Lugas',
+  postDt: new Date('2023-03-15 16:00:00'),
+  readMin: 10,
+}
 
 const Index: React.FC<Props> = () => {
   const myRef = useRef<HTMLDivElement>(null)
@@ -157,16 +165,18 @@ const Index: React.FC<Props> = () => {
   return (
     <>
       <Head>
-        <title>{title}</title>
-        <meta name="description" content={description} />
+        <title>{pageData.title}</title>
+        <meta name="title" content={pageData.title} />
+        <meta name="description" content={pageData.description} />
+        <meta name="keywords" content={pageData.keywords} />
       </Head>
       <div className='p-4 flex flex-col justify-center items-center'>
-        <h1 className='font-bold text-primary-900 text-center'>{'Cara install nginx pada ubuntu 20.04'}</h1>
+        <h1 className='font-bold text-primary-900 text-center'>{pageData.title}</h1>
         <div>
-          {'Jihan Lugas'}
+          {pageData.author}
         </div>
         <div className=''>
-          {'Published on March 9, 2023 | 7 min read'}
+          {'Tanggal Posting ' + displayDate(pageData.postDt) + ' | ' + pageData.readMin + ' min'}
         </div>
       </div>
       <div className='grid grid-cols-1 lg:grid-cols-5 gap-0 lg:gap-4'>
