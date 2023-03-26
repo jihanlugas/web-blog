@@ -14,7 +14,7 @@ type Props = {
 }
 
 const pageData: blogData = {
-  title: 'Cara install Node.js pada Ubuntu 20.04',
+  title: 'Cara install Node.js pada Ubuntu',
   description: 'Dalam panduan ini, kami akan menunjukkan kepada Anda tiga cara menginstal Node.js pada server Ubuntu 20.04.',
   keywords: 'ubuntu, Node.js, Nodejs, cara install Node.js, cara install Nodejs, cara install Node.js ubuntu, cara install Nodejs ubuntu, cara install Node.js ubuntu 20.04, cara install Nodejs ubuntu 20.04, install Node.js ubuntu, install Nodejs ubuntu',
   author: 'Jihan Lugas',
