@@ -24,106 +24,36 @@ const pageData: blogData = {
 
 
 const Index: React.FC<Props> = () => {
-  const myRef = useRef<HTMLDivElement>(null)
-  const refPersyaratan = useRef<HTMLDivElement>(null)
-  const refLangkah1 = useRef<HTMLDivElement>(null)
-  const refLangkah2 = useRef<HTMLDivElement>(null)
-  const refLangkah3 = useRef<HTMLDivElement>(null)
-  const refLangkah4 = useRef<HTMLDivElement>(null)
-  const refLangkah5 = useRef<HTMLDivElement>(null)
-  const refLangkah6 = useRef<HTMLDivElement>(null)
-  const refKesimpulan = useRef<HTMLDivElement>(null)
-
-  const scrollPersyaratan = () => {
-    let bodyPosition = document.body.getBoundingClientRect().y
-    let headerOffset = 80 // 5rem = 80px
-    let elementPosition = refPersyaratan.current.getBoundingClientRect().top
-    let offsetPosition = elementPosition - headerOffset - bodyPosition;
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
-  }
-
-  const scrollLangkah1 = () => {
-    let bodyPosition = document.body.getBoundingClientRect().y
-    let headerOffset = 80 // 5rem = 80px
-    let elementPosition = refLangkah1.current.getBoundingClientRect().top
-    let offsetPosition = elementPosition - headerOffset - bodyPosition;
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
-  }
-
-  const scrollLangkah2 = () => {
-    let bodyPosition = document.body.getBoundingClientRect().y
-    let headerOffset = 80 // 5rem = 80px
-    let elementPosition = refLangkah2.current.getBoundingClientRect().top
-    let offsetPosition = elementPosition - headerOffset - bodyPosition;
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
-  }
-
-  const scrollLangkah3 = () => {
-    let bodyPosition = document.body.getBoundingClientRect().y
-    let headerOffset = 80 // 5rem = 80px
-    let elementPosition = refLangkah3.current.getBoundingClientRect().top
-    let offsetPosition = elementPosition - headerOffset - bodyPosition;
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
-  }
-
-  const scrollLangkah4 = () => {
-    let bodyPosition = document.body.getBoundingClientRect().y
-    let headerOffset = 80 // 5rem = 80px
-    let elementPosition = refLangkah4.current.getBoundingClientRect().top
-    let offsetPosition = elementPosition - headerOffset - bodyPosition;
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
-  }
-
-  const scrollKesimpulan = () => {
-    let bodyPosition = document.body.getBoundingClientRect().y
-    let headerOffset = 80 // 5rem = 80px
-    let elementPosition = refKesimpulan.current.getBoundingClientRect().top
-    let offsetPosition = elementPosition - headerOffset - bodyPosition;
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
-  }
-
-
 
   const LeftContent = () => {
     return (
       <>
         <div>
           <div className='my-2 font-bold'>Content</div>
-          <div className='my-2 text-gray-400 hover:text-gray-600' onClick={scrollPersyaratan}>
-            Prasyarat
+          <div className='my-2'>
+            <Link href={'#langkah-1'} scroll={false} className='text-gray-400 hover:text-gray-600 no-underline' >
+              Langkah 1 — Menginstal MySQL
+            </Link>
           </div>
-          <div className='my-2 text-gray-400 hover:text-gray-600' onClick={scrollLangkah1}>
-            Langkah 1 — Menginstal MySQL
+          <div className='my-2'>
+            <Link href={'#langkah-2'} scroll={false} className='text-gray-400 hover:text-gray-600 no-underline' >
+              Langkah 2 — Mengonfigurasi MySQL
+            </Link>
           </div>
-          <div className='my-2 text-gray-400 hover:text-gray-600' onClick={scrollLangkah2}>
-            Langkah 2 — Mengonfigurasi MySQL
+          <div className='my-2'>
+            <Link href={'#langkah-3'} scroll={false} className='text-gray-400 hover:text-gray-600 no-underline' >
+              Langkah 3 — Menciptakan Pengguna MySQL Khusus dan Memberi Privilese
+            </Link>
           </div>
-          <div className='my-2 text-gray-400 hover:text-gray-600' onClick={scrollLangkah3}>
-            Langkah 3 — Menciptakan Pengguna MySQL Khusus dan Memberi Privilese
+          <div className='my-2'>
+            <Link href={'#langkah-4'} scroll={false} className='text-gray-400 hover:text-gray-600 no-underline' >
+              Langkah 4 — Menguji MySQL
+            </Link>
           </div>
-          <div className='my-2 text-gray-400 hover:text-gray-600' onClick={scrollLangkah4}>
-            Langkah 4 — Menguji MySQL
-          </div>
-          <div className='my-2 text-gray-400 hover:text-gray-600' onClick={scrollKesimpulan}>
-            Kesimpulan
+          <div className='my-2'>
+            <Link href={'#kesimpulan'} scroll={false} className='text-gray-400 hover:text-gray-600 no-underline' >
+              Kesimpulan
+            </Link>
           </div>
         </div>
       </>
@@ -160,7 +90,7 @@ const Index: React.FC<Props> = () => {
           <h3 className='mt-0'>Pengantar</h3>
           <p><Link href={'https://www.mysql.com/'}>MySQL</Link> adalah suatu sistem manajemen basis data sumber terbuka, yang umumnya diinstal sebagai bagian dari tumpukan LAMP (Linux, Apache, MySQL, PHP/Python/Perl) yang populer. Ini menerapkan model relasional dan menggunakan Structured Query Language (lebih dikenal sebagai SQL) untuk mengelola datanya.</p>
           <p>Tutorial ini akan membahas cara menginstal MySQL versi <code>8.0</code> pada server Ubuntu 20.04. Dengan menyelesaikan tutorial ini, Anda akan memiliki basis data relasional yang berfungsi, yang dapat Anda gunakan untuk membangun situs web atau aplikasi Anda berikutnya.</p>
-          <h2 ref={refLangkah1}>Langkah 1 — Menginstal MySQL</h2>
+          <h2 id={'langkah-1'} className={'scroll-mt-20'}>Langkah 1 — Menginstal MySQL</h2>
           <p>Pada Ubuntu 20.04, Anda dapat menginstal MySQL menggunakan repositori paket APT. Pada saat penulisan tutorial ini, versi MySQL yang tersedia di repositori Ubuntu asali adalah versi <code>8.0.27</code>.</p>
           <p>Untuk menginstalnya, perbarui indeks paket pada server Anda jika Anda belum melakukan akhir-akhir ini:</p>
           <pre>
@@ -175,7 +105,7 @@ const Index: React.FC<Props> = () => {
             </code>
           </pre>
           <p>Ini akan menginstal MySQL, tetapi tidak akan meminta Anda untuk menetapkan kata sandi atau membuat perubahan konfigurasi lain. Karena ini membuat instalasi MySQL Anda menjadi tidak aman, maka kita akan membahas ini selanjutnya.</p>
-          <h2 ref={refLangkah2}>Langkah 2 — Mengonfigurasi MySQL</h2>
+          <h2 id={'langkah-2'} className={'scroll-mt-20'}>Langkah 2 — Mengonfigurasi MySQL</h2>
           <p>Untuk instalasi baru MySQL, Anda akan menjalankan skrip keamanan DBMS yang disertakan. Skrip ini mengubah beberapa opsi asali yang kurang aman untuk hal-hal seperti log masuk root jarak jauh dan pengguna sampel.</p>
           <p>Jalankan skrip keamanan dengan <code>sudo</code>:</p>
           <pre>
@@ -238,7 +168,7 @@ const Index: React.FC<Props> = () => {
           </pre>
           <p>Dari sana, Anda dapat menekan <code>Y</code> lalu <code>ENTER</code> untuk menerima jawaban asali untuk semua pertanyaan berikutnya. Ini akan menghapus sebagian pengguna anonim dan basis data percobaan, menonaktifkan log masuk root dari jarak jauh, dan memuat aturan-aturan baru ini sehingga MySQL segera menerapkan perubahan yang Anda telah buat.</p>
           <p>Setelah skrip selesai, instalasi MySQL Anda akan diamankan. Anda sekarang dapat melanjutkan ke penciptaan pengguna basis data khusus dengan klien MySQL.</p>
-          <h2 ref={refLangkah3}>Langkah 3 — Menciptakan Pengguna MySQL Khusus dan Memberi Privilese</h2>
+          <h2 id={'langkah-3'} className={'scroll-mt-20'}>Langkah 3 — Menciptakan Pengguna MySQL Khusus dan Memberi Privilese</h2>
           <p>Setelah instalasi, MySQL menciptakan akun pengguna <strong>root</strong> yang dapat Anda gunakan untuk mengelola basis data Anda. Pengguna ini memiliki privilese penuh atas server MySQL, artinya pengguna ini memiliki kendali penuh atas setiap basis data, tabel, pengguna, dan seterusnya. Maka dari itu, saran terbaik adalah hindari menggunakan akun ini di luar fungsi administratif. Langkah ini menjabarkan cara menggunakan pengguna <strong>root</strong> MySQL untuk menciptakan akun pengguna baru dan memberikannya privilese.</p>
           <p>Dalam sistem Ubuntu yang menjalankan MySQL <code>5.7</code> (dan versi lebih baru), pengguna MySQL <strong>root</strong> ditetapkan untuk mengautentikasi dengan menggunakan plugin <code>auth_socket</code> secara asali alih-alih dengan kata sandi. Plugin ini mengharuskan nama pengguna sistem operasi yang memanggil klien MySQL sesuai dengan nama pengguna <code>MySQL</code> yang disebutkan pada perintah, sehingga Anda harus menggunakan mysql dengan privilese <code>sudo</code> untuk mendapatkan akses ke pengguna MySQL <strong>root</strong>:</p>
           <pre>
@@ -328,7 +258,7 @@ const Index: React.FC<Props> = () => {
           </pre>
           <p>Flag <code>-p</code> akan membuat clien MySQL meminta kata sandi pengguna MySQL Anda untuk diautentikasi.</p>
           <p>Yang terakhir, mari kita uji instalasi MySQL.</p>
-          <h2 ref={refLangkah4}>Langkah 4 — Menguji MySQL</h2>
+          <h2 id={'langkah-4'} className={'scroll-mt-20'}>Langkah 4 — Menguji MySQL</h2>
           <p>Terlepas dari bagaimana Anda menginstalnya, MySQL seharusnya mulai berfungsi secara otomatis. Untuk menguji ini, periksa statusnya.</p>
           <pre className='overflow-x-scroll'>
             <code className=''>
@@ -382,7 +312,7 @@ const Index: React.FC<Props> = () => {
             </code>
           </pre>
           <p>Ini berarti MySQL sudah aktif dan berfungsi.</p>
-          <h2 ref={refKesimpulan}>Kesimpulan</h2>
+          <h2 id={'kesimpulan'} className={'scroll-mt-20'}>Kesimpulan</h2>
           <p>Anda sekarang memiliki penataan MySQL dasar di server Anda. Berikut ini adalah beberapa contoh dari langkah selanjutnya yang Anda dapat lakukan:</p>
         </div>
         <div className='p-4'>
