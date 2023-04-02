@@ -8,6 +8,7 @@ import { useRef } from 'react';
 import Terbaru from '@/components/layout/terbaru';
 import { blogData } from '@/types/blog';
 import { displayDate } from '@/utils/Formater';
+import { useRouter } from 'next/router';
 
 type Props = {
 
@@ -24,103 +25,36 @@ const pageData: blogData = {
 
 
 const Index: React.FC<Props> = () => {
-  const myRef = useRef<HTMLDivElement>(null)
-  const refPersyaratan = useRef<HTMLDivElement>(null)
-  const ref1 = useRef<HTMLDivElement>(null)
-  const ref2 = useRef<HTMLDivElement>(null)
-  const ref3 = useRef<HTMLDivElement>(null)
-  const ref4 = useRef<HTMLDivElement>(null)
-  const ref5 = useRef<HTMLDivElement>(null)
-  const ref6 = useRef<HTMLDivElement>(null)
-  const refKesimpulan = useRef<HTMLDivElement>(null)
-
-  const scrollPersyaratan = () => {
-    let bodyPosition = document.body.getBoundingClientRect().y
-    let headerOffset = 80 // 5rem = 80px
-    let elementPosition = refPersyaratan.current.getBoundingClientRect().top
-    let offsetPosition = elementPosition - headerOffset - bodyPosition;
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
-  }
-
-  const scroll1 = () => {
-    let bodyPosition = document.body.getBoundingClientRect().y
-    let headerOffset = 80 // 5rem = 80px
-    let elementPosition = ref1.current.getBoundingClientRect().top
-    let offsetPosition = elementPosition - headerOffset - bodyPosition;
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
-  }
-
-  const scroll2 = () => {
-    let bodyPosition = document.body.getBoundingClientRect().y
-    let headerOffset = 80 // 5rem = 80px
-    let elementPosition = ref2.current.getBoundingClientRect().top
-    let offsetPosition = elementPosition - headerOffset - bodyPosition;
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
-  }
-
-  const scroll3 = () => {
-    let bodyPosition = document.body.getBoundingClientRect().y
-    let headerOffset = 80 // 5rem = 80px
-    let elementPosition = ref3.current.getBoundingClientRect().top
-    let offsetPosition = elementPosition - headerOffset - bodyPosition;
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
-  }
-
-  const scroll4 = () => {
-    let bodyPosition = document.body.getBoundingClientRect().y
-    let headerOffset = 80 // 5rem = 80px
-    let elementPosition = ref4.current.getBoundingClientRect().top
-    let offsetPosition = elementPosition - headerOffset - bodyPosition;
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
-  }
-
-  const scrollKesimpulan = () => {
-    let bodyPosition = document.body.getBoundingClientRect().y
-    let headerOffset = 80 // 5rem = 80px
-    let elementPosition = refKesimpulan.current.getBoundingClientRect().top
-    let offsetPosition = elementPosition - headerOffset - bodyPosition;
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
-  }
-
-
 
   const LeftContent = () => {
     return (
       <>
         <div>
           <div className='my-2 font-bold'>Content</div>
-          <div className='my-2 text-gray-400 hover:text-gray-600' onClick={scrollPersyaratan}>
-            Prasyarat
+          <div className='my-2'>
+            <Link href={'#prasyarat'} scroll={false} className='text-gray-400 hover:text-gray-600 no-underline' >
+              Prasyarat
+            </Link>
           </div>
-          <div className='my-2 text-gray-400 hover:text-gray-600' onClick={scroll1}>
-            Opsi 1 — Menginstal Node.js dengan Apt dari Repositori Asali
+          <div className='my-2'>
+            <Link href={'#opsi-1'} scroll={false} className='text-gray-400 hover:text-gray-600 no-underline' >
+              Opsi 1 — Menginstal Node.js dengan Apt dari Repositori Asali
+            </Link>
           </div>
-          <div className='my-2 text-gray-400 hover:text-gray-600' onClick={scroll2}>
-            Opsi 2 — Menginstal Node.js dengan Apt Menggunakan NodeSource PPA
+          <div className='my-2'>
+            <Link href={'#opsi-2'} scroll={false} className='text-gray-400 hover:text-gray-600 no-underline' >
+              Opsi 2 — Menginstal Node.js dengan Apt Menggunakan NodeSource PPA
+            </Link>
           </div>
-          <div className='my-2 text-gray-400 hover:text-gray-600' onClick={scroll3}>
-            Opsi 3 — Menginstal Node Menggunakan Node Version Manager
+          <div className='my-2'>
+            <Link href={'#opsi-3'} scroll={false} className='text-gray-400 hover:text-gray-600 no-underline' >
+              Opsi 3 — Menginstal Node Menggunakan Node Version Manager
+            </Link>
           </div>
-          <div className='my-2 text-gray-400 hover:text-gray-600' onClick={scrollKesimpulan}>
-            Kesimpulan
+          <div className='my-2'>
+            <Link href={'#kesimpulan'} scroll={false} className='text-gray-400 hover:text-gray-600 no-underline' >
+              Kesimpulan
+            </Link>
           </div>
         </div>
       </>
@@ -163,9 +97,9 @@ const Index: React.FC<Props> = () => {
             <li>menginstal <code>nvm</code>, Node Version Manager, dan menggunakannya untuk menginstal dan mengelola beberapa versi Node.js</li>
           </ul>
           <p>Bagi banyak pengguna, menggunakan <code>apt</code> dengan repo asali sudah mencukupi. Jika Anda memerlukan versi spesifik yang lebih baru (atau warisan) dari Node, Anda harus menggunakan repositori PPA. Jika Anda secara aktif mengembangkan aplikasi Node dan perlu sering beralih di antara beberapa versi <code>node</code>, pilihlah metode <code>nvm</code>.</p>
-          <h2 ref={refPersyaratan}>Prasyarat</h2>
+          <h2 id={'prasyarat'} className={'scroll-mt-20'}>Prasyarat</h2>
           <p>Panduan ini mengasumsikan bahwa Anda menggunakan Ubuntu 20.04. Sebelum Anda memulai, Anda harus memiliki akun pengguna non-root dengan privilese sudo yang disiapkan pada sistem Anda.</p>
-          <h2 ref={ref1}>Opsi 1 - Menginstal Node.js dengan Apt dari Repositori Asali</h2>
+          <h2 id={'opsi-1'} className={'scroll-mt-20'}>Opsi 1 - Menginstal Node.js dengan Apt dari Repositori Asali</h2>
           <p>Ubuntu 20.04 berisi versi Node.js di dalam repositori asalinya, yang dapat digunakan untuk memberi pengalaman yang konsisten pada banyak sistem. Pada saat dokumen ini ditulis, versi di dalam repositori adalah 10.19. Ini bukanlah versi terbaru, namun versi ini seharusnya stabil dan mencukupi untuk eksperimen cepat dengan bahasa ini.</p>
           <p>Untuk mendapatkan versi ini, Anda dapat menggunakan manajer paket <code>apt</code>. Segarkan indeks paket lokal Anda terlebih dahulu dengan mengetik:</p>
           <pre>
@@ -201,7 +135,7 @@ const Index: React.FC<Props> = () => {
           </pre>
           <p>Ini akan memungkinkan Anda untuk menginstal modul dan paket untuk digunakan dengan Node.js.</p>
           <p>Pada titik ini, Anda telah berhasil menginstal Node.js dan <code>npm</code> dengan menggunakan <code>apt</code> dan repositori perangkat lunak Ubuntu asali. Bagian berikutnya akan menunjukkan cara menggunakan suatu repositori alternatif untuk menginstal versi Node.js yang berbeda.</p>
-          <h2 ref={ref2}>Opsi 2 - Menginstal Node.js dengan Apt Menggunakan NodeSource PPA</h2>
+          <h2 id={'opsi-2'} className={'scroll-mt-20'}>Opsi 2 - Menginstal Node.js dengan Apt Menggunakan NodeSource PPA</h2>
           <p>Untuk menginstal versi Node.js yang berbeda, Anda dapat menggunakan suatu PPA (personal package archive/arsip paket pribadi) yang dikelola oleh NodeSource. PPA ini menyediakan lebih banyak versi Node.js daripada repositori Ubuntu resmi. Node.js v10, v12, v13, dan v14 tersedia saat dokumen ini ditulis.</p>
           <p>Pertama, kita akan menginstal PPA untuk mendapatkan akses ke paket-paketnya. Dari direktori rumah Anda, gunakan <code>curl</code> untuk mengambil skrip instalasi untuk versi yang lebih Anda sukai, pastikan untuk mengganti <code>14.x</code> dengan string versi yang lebih Anda sukai (jika berbeda).</p>
           <pre>
@@ -245,7 +179,7 @@ const Index: React.FC<Props> = () => {
           </pre>
           <p>Paket <code>nodejs</code> NodeSource berisi baik biner <code>node</code> dan <code>npm</code>, sehingga Anda tidak perlu menginstal <code>npm</code> secara terpisah.</p>
           <p>Pada titik ini, Anda telah berhasil menginstal Node.js dan <code>npm</code> dengan menggunakan <code>apt</code> dan NodeSource PPA. Bagian berikutnya akan menunjukkan cara menggunakan Node Version Manager untuk menginstal dan mengelola beberapa versi Node.js.</p>
-          <h2 ref={ref3}>Opsi 3 - Menginstal Node Menggunakan Node Version Manager</h2>
+          <h2 id={'opsi-3'} className={'scroll-mt-20'}>Opsi 3 - Menginstal Node Menggunakan Node Version Manager</h2>
           <p>Cara lain untuk menginstal Node.js yang sangat fleksibel adalah dengan menggunakan nvm, Node Version Manager. Perangkat lunak ini memungkinkan Anda untuk menginstal dan mengelola banyak versi independen Node.js yang berbeda, dan paket Node yang terkait, pada saat bersamaan.</p>
           <p>Untuk menginstal NVM pada mesin Ubuntu 20.04 Anda, kunjungi laman <Link href={'https://github.com/nvm-sh/nvm'}>GitHub</Link> proyek ini. Salin perintah <code>curl</code> dari berkas README yang ditampilkan pada halaman utama. Ini akan memberi tahu Anda versi terbaru dari skrip instalasi.</p>
           <p>Sebelum menyalurkan perintah melalui <code>bash</code>, Anda selalu disarankan untuk mengaudit skrip untuk memastikan bahwa skrip tersebut tidak melakukan apa pun yang tidak Anda setujui. Anda dapat melakukan itu dengan menghapus segmen | <code>bash</code> di akhir perintah <code>curl</code>:</p>
@@ -393,7 +327,7 @@ const Index: React.FC<Props> = () => {
             </code>
           </pre>
           <p>Versi Node yang benar terinstal pada mesin kita seperti yang kita harapkan. Versi <code>npm</code> yang kompatibel juga tersedia.</p>
-          <h2 ref={refKesimpulan}>Kesimpulan</h2>
+          <h2 id={'kesimpulan'} className={'scroll-mt-20'}>Kesimpulan</h2>
           <p>Ada beberapa cara untuk mengaktifkan dan menjalankan Node.js pada server Ubuntu 20.04 Anda. Keadaan Anda akan menentukan metode mana yang terbaik untuk kebutuhan Anda. Walaupun menggunakan versi yang dikemas di dalam repositori Ubuntu adalah metode termudah, namun menggunakan <code>nvm</code> atau NodeSource PPA menawarkan fleksibilitas tambahan.</p>
         </div>
         <div className='p-4'>

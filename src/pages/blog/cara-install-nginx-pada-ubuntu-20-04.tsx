@@ -23,134 +23,50 @@ const pageData: blogData = {
 }
 
 const Index: React.FC<Props> = () => {
-  const myRef = useRef<HTMLDivElement>(null)
-  const refPersyaratan = useRef<HTMLDivElement>(null)
-  const refLangkah1 = useRef<HTMLDivElement>(null)
-  const refLangkah2 = useRef<HTMLDivElement>(null)
-  const refLangkah3 = useRef<HTMLDivElement>(null)
-  const refLangkah4 = useRef<HTMLDivElement>(null)
-  const refLangkah5 = useRef<HTMLDivElement>(null)
-  const refLangkah6 = useRef<HTMLDivElement>(null)
-  const refKesimpulan = useRef<HTMLDivElement>(null)
-
-  const scrollPersyaratan = () => {
-    let bodyPosition = document.body.getBoundingClientRect().y
-    let headerOffset = 80 // 5rem = 80px
-    let elementPosition = refPersyaratan.current.getBoundingClientRect().top
-    let offsetPosition = elementPosition - headerOffset - bodyPosition;
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
-  }
-
-  const scrollLangkah1 = () => {
-    let bodyPosition = document.body.getBoundingClientRect().y
-    let headerOffset = 80 // 5rem = 80px
-    let elementPosition = refLangkah1.current.getBoundingClientRect().top
-    let offsetPosition = elementPosition - headerOffset - bodyPosition;
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
-  }
-
-  const scrollLangkah2 = () => {
-    let bodyPosition = document.body.getBoundingClientRect().y
-    let headerOffset = 80 // 5rem = 80px
-    let elementPosition = refLangkah2.current.getBoundingClientRect().top
-    let offsetPosition = elementPosition - headerOffset - bodyPosition;
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
-  }
-
-  const scrollLangkah3 = () => {
-    let bodyPosition = document.body.getBoundingClientRect().y
-    let headerOffset = 80 // 5rem = 80px
-    let elementPosition = refLangkah3.current.getBoundingClientRect().top
-    let offsetPosition = elementPosition - headerOffset - bodyPosition;
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
-  }
-
-  const scrollLangkah4 = () => {
-    let bodyPosition = document.body.getBoundingClientRect().y
-    let headerOffset = 80 // 5rem = 80px
-    let elementPosition = refLangkah4.current.getBoundingClientRect().top
-    let offsetPosition = elementPosition - headerOffset - bodyPosition;
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
-  }
-
-  const scrollLangkah5 = () => {
-    let bodyPosition = document.body.getBoundingClientRect().y
-    let headerOffset = 80 // 5rem = 80px
-    let elementPosition = refLangkah5.current.getBoundingClientRect().top
-    let offsetPosition = elementPosition - headerOffset - bodyPosition;
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
-  }
-
-  const scrollLangkah6 = () => {
-    let bodyPosition = document.body.getBoundingClientRect().y
-    let headerOffset = 80 // 5rem = 80px
-    let elementPosition = refLangkah6.current.getBoundingClientRect().top
-    let offsetPosition = elementPosition - headerOffset - bodyPosition;
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
-  }
-
-  const scrollKesimpulan = () => {
-    let bodyPosition = document.body.getBoundingClientRect().y
-    let headerOffset = 80 // 5rem = 80px
-    let elementPosition = refKesimpulan.current.getBoundingClientRect().top
-    let offsetPosition = elementPosition - headerOffset - bodyPosition;
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
-  }
-
-
-
   const LeftContent = () => {
     return (
       <>
         <div>
           <div className='my-2 font-bold'>Content</div>
-          <div className='my-2 text-gray-400 hover:text-gray-600' onClick={scrollPersyaratan}>
-            Prasyarat
+          <div className='my-2'>
+            <Link href={'#prasyarat'} scroll={false} className='text-gray-400 hover:text-gray-600 no-underline' >
+              Prasyarat
+            </Link>
           </div>
-          <div className='my-2 text-gray-400 hover:text-gray-600' onClick={scrollLangkah1}>
-            Langkah 1 - Menginstal Nginx
+          <div className='my-2'>
+            <Link href={'#langkah-1'} scroll={false} className='text-gray-400 hover:text-gray-600 no-underline' >
+              Langkah 1 - Menginstal Nginx
+            </Link>
           </div>
-          <div className='my-2 text-gray-400 hover:text-gray-600' onClick={scrollLangkah2}>
-            Langkah 2 - Menyesuaikan Firewall
+          <div className='my-2'>
+            <Link href={'#langkah-2'} scroll={false} className='text-gray-400 hover:text-gray-600 no-underline' >
+              Langkah 2 - Menyesuaikan Firewall
+            </Link>
           </div>
-          <div className='my-2 text-gray-400 hover:text-gray-600' onClick={scrollLangkah3}>
-            Langkah 3 - Memeriksa Server Web Anda
+          <div className='my-2'>
+            <Link href={'#langkah-3'} scroll={false} className='text-gray-400 hover:text-gray-600 no-underline' >
+              Langkah 3 - Memeriksa Server Web Anda
+            </Link>
           </div>
-          <div className='my-2 text-gray-400 hover:text-gray-600' onClick={scrollLangkah4}>
-            Langkah 4 - Mengelola Proses Nginx
+          <div className='my-2'>
+            <Link href={'#langkah-4'} scroll={false} className='text-gray-400 hover:text-gray-600 no-underline' >
+              Langkah 4 - Mengelola Proses Nginx
+            </Link>
           </div>
-          <div className='my-2 text-gray-400 hover:text-gray-600' onClick={scrollLangkah5}>
-            Langkah 5 - Menyiapkan Blok Server (Disarankan)
+          <div className='my-2'>
+            <Link href={'#langkah-5'} scroll={false} className='text-gray-400 hover:text-gray-600 no-underline' >
+              Langkah 5 - Menyiapkan Blok Server (Disarankan)
+            </Link>
           </div>
-          <div className='my-2 text-gray-400 hover:text-gray-600' onClick={scrollLangkah6}>
-            Langkah 6 - Membiasakan Diri dengan Berkas dan Direktori Penting Nginx
+          <div className='my-2'>
+            <Link href={'#langkah-6'} scroll={false} className='text-gray-400 hover:text-gray-600 no-underline' >
+              Langkah 6 - Membiasakan Diri dengan Berkas dan Direktori Penting Nginx
+            </Link>
           </div>
-          <div className='my-2 text-gray-400 hover:text-gray-600' onClick={scrollKesimpulan}>
-            Kesimpulan
+          <div className='my-2'>
+            <Link href={'#kesimpulan'} scroll={false} className='text-gray-400 hover:text-gray-600 no-underline' >
+              Kesimpulan
+            </Link>
           </div>
         </div>
       </>
@@ -187,10 +103,10 @@ const Index: React.FC<Props> = () => {
           <h3 className='mt-0'>Pengantar</h3>
           <p><Link href={'https://nginx.com'}>Nginx</Link> adalah salah satu server web terpopuler di dunia dan berperan sebagai hos dari sebagian situs terbesar dan situs yang memiliki lalu lintas tertinggi di jagad internet. Ini adalah pilihan ringan yang dapat digunakan baik sebagai server web atau proksi balik.</p>
           <p>Dalam panduan ini, kita akan membahas cara menginstal Nginx pada server Ubuntu 20.04 Anda, menyesuaikan firewall, mengelola proses Nginx, dan menyiapkan blok server untuk menjadi hos dari lebih dari satu domain dari suatu server tunggal.</p>
-          <h2 ref={refPersyaratan}>Prasyarat</h2>
+          <h2 id={'prasyarat'} className={'scroll-mt-20'}>Prasyarat</h2>
           <p>Sebelum Anda memulai panduan ini, Anda harus memiliki pengguna non-root reguler dengan privilese sudo yang terkonfigurasi di server Anda</p>
           <p>Ketika Anda sudah memiliki akun, login sebagai pengguna non-root untuk memulai.</p>
-          <h2 ref={refLangkah1}>Langkah 1 - Menginstal Nginx</h2>
+          <h2 id={'langkah-1'} className={'scroll-mt-20'}>Langkah 1 - Menginstal Nginx</h2>
           <p>Karena Nginx tersedia di repositori asli Ubuntu, maka kita dimungkinkan untuk menginstalnya dari repositori ini menggunakan sistem pengemasan <code>apt</code>.</p>
           <p>Karena ini adalah interaksi pertama kita dengan sistem pengemasan <code>apt</code> pada sesi ini, kita akan memperbarui indeks pengemasan lokal agar kita memiliki akses ke daftar paket terbaru. Setelah itu, kita dapat menginstal <code>nginx</code>:</p>
           <pre>
@@ -200,7 +116,7 @@ const Index: React.FC<Props> = () => {
             </code>
           </pre>
           <p>Setelah menerima prosedur, <code>apt</code> akan menginstal Nginx dan segala dependensi yang diperlukan ke server Anda.</p>
-          <h2 ref={refLangkah2}>Langkah 2 - Menyesuaikan Firewall</h2>
+          <h2 id={'langkah-2'} className={'scroll-mt-20'}>Langkah 2 - Menyesuaikan Firewall</h2>
           <p>Sebelum menguji Nginx, perangkat lunak firewall perlu disesuaikan untuk mengizinkan akses ke layanan. Nginx mendaftarkan dirinya sendiri sebagai sebagai layanan dengan <code>ufw</code> pada saat instalasi, yang mempermudah untuk mengizinkan akses Nginx.</p>
           <p>Buat daftar konfigurasi aplikasi yang mana <code>ufw</code> mengetahui cara bekerja sama dengannya dengan mengetik:</p>
           <pre>
@@ -254,7 +170,7 @@ const Index: React.FC<Props> = () => {
               </div>
             </code>
           </pre>
-          <h2 ref={refLangkah3}>Langkah 3 - Memeriksa Server Web Anda</h2>
+          <h2 id={'langkah-3'} className={'scroll-mt-20'}>Langkah 3 - Memeriksa Server Web Anda</h2>
           <p>Pada akhir proses instalasi, Ubuntu 20.04 memulai Nginx. Server web seharusnya sudah aktif dan berjalan.</p>
           <p>Kita dapat memeriksa dengan sistem init <code>systemd</code> untuk memastikan layanan sedang berjalan dengan mengetik:</p>
           <pre>
@@ -298,7 +214,7 @@ const Index: React.FC<Props> = () => {
             className='border-2 rounded'
           />
           <p>Jika Anda berada di laman ini, server Anda berjalan dengan benar dan siap untuk dikelola.</p>
-          <h2 ref={refLangkah4}>Langkah 4 - Mengelola Proses Nginx</h2>
+          <h2 id={'langkah-4'} className={'scroll-mt-20'}>Langkah 4 - Mengelola Proses Nginx</h2>
           <p>Karena kini server web Anda sudah aktif dan berjalan, mari kita tinjau beberapa perintah manajemen dasar.</p>
           <p>Untuk menghentikan server web Anda, ketik:</p>
           <pre>
@@ -337,7 +253,7 @@ const Index: React.FC<Props> = () => {
             </code>
           </pre>
           <p>Anda kini telah mempelajari perintah manajemen dasar dan siap untuk mengonfigurasi situs untuk menjadi hos dari lebih dari satu domain.</p>
-          <h2 ref={refLangkah5}>Langkah 5 - Menyiapkan Blok Server (Disarankan)</h2>
+          <h2 id={'langkah-5'} className={'scroll-mt-20'}>Langkah 5 - Menyiapkan Blok Server (Disarankan)</h2>
           <p>Ketika menggunakan server web Nginx, blok server (serupa dengan hos virtual di Apache) dapat digunakan untuk mengenkapsulasi detail konfigurasi dan menjadi hos untuk lebih dari satu domain dari suatu server tunggal. Kita akan menyiapkan domain bernama <strong>your_domain</strong>, tetapi Anda harus <strong>menggantinya dengan nama domain Anda sendiri</strong>.</p>
           <p>Nginx pada Ubuntu 20.04 memiliki satu blok server yang diaktifkan secara asali, yang dikonfigurasi untuk menampilkan dokumen dari suatu direktori di <code>/var/www/html</code>. Meskipun ini berfungsi baik untuk situs tunggal, ini bisa menjadi sulit dijalankan jika Anda menjadi hos dari beberapa situs. Alih-alih memodifikasi <code>/var/www/html</code>, mari kita buat suatu struktur direktori di dalam <code>/var/www</code> untuk situs <strong>your_domain</strong> kita, dengan membiarkan <code>/var/www/html</code> sebagai direktori asali yang akan ditampilkan jika permintaan klien tidak cocok dengan situs lain apa pun.</p>
           <p>Buat direktori untuk <strong>your_domain</strong> sebagai berikut, dengan menggunakan bendera <code>-p</code> untuk menciptakan direktori induk apa pun yang diperlukan:</p>
@@ -455,7 +371,7 @@ const Index: React.FC<Props> = () => {
             loading={'lazy'}
             className='border-2 rounded'
           />
-          <h2 ref={refLangkah6}>Langkah 6 - Membiasakan Diri dengan Berkas dan Direktori Penting Nginx</h2>
+          <h2 id={'langkah-6'} className={'scroll-mt-20'}>Langkah 6 - Membiasakan Diri dengan Berkas dan Direktori Penting Nginx</h2>
           <p>Setelah Anda mengetahui cara mengelola layanan Nginx, Anda perlu waktu beberapa menit untuk membiasakan diri dengan beberapa direktori dan berkas penting.</p>
           <h3>Isi</h3>
           <ul className='my-4 ml-8 list-disc'>
@@ -474,7 +390,7 @@ const Index: React.FC<Props> = () => {
             <li><code>/var/log/nginx/access.log</code>: Setiap permintaan ke server web Anda direkam dalam berkas log ini kecuali Nginx dikonfigurasi untuk tidak melakukannya.</li>
             <li><code>/var/log/nginx/error.log</code>: Setiap kesalahan Nginx akan direkam dalam log ini.</li>
           </ul>
-          <h2 ref={refKesimpulan}>Kesimpulan</h2>
+          <h2 id={'kesimpulan'} className={'scroll-mt-20'}>Kesimpulan</h2>
           <p>Kini server web Anda telah terinstal, Anda memiliki banyak pilihan untuk tipe konten yang dilayani dan teknologi yang Anda ingin gunakan untuk menciptakan pengalaman yang lebih kaya.</p>
         </div>
         <div className='p-4'>
