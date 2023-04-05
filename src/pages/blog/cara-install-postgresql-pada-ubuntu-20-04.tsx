@@ -79,6 +79,7 @@ const Index: React.FC<Props> = () => {
         <meta name="title" content={pageData.title} />
         <meta name="description" content={pageData.description} />
         <meta name="keywords" content={pageData.keywords} />
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1826599407360904" crossOrigin="anonymous"></script>
       </Head>
       <div className='p-4 flex flex-col justify-center items-center'>
         <h1 className='font-bold text-primary-900 text-center'>{pageData.title}</h1>
